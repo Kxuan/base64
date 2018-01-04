@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="x-dns-prefetch-control" content="on"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta content="telephone=no" name="format-detection"/>
+<META name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1, minimum-scale=1, user-scalable=no"> 
+<link rel="stylesheet" type="text/css" href="/css.css"/>
+<SCRIPT src="/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="/clipboard.min.js" type="text/javascript"></SCRIPT>
+</HEAD>
+<TITLE>爱护环境，从我做起</TITLE> 
+
+<BODY>
+<p style="display:none;">我们住在美丽的地球上，可惜地球每天都饱受着被各种臭气、化学物品、毒汁、汽车尾气、生活垃圾、工厂垃圾等等肮脏污染，使我们可爱的地球逐渐退化。所以保护环境是每个人义不容辞的责任。</p>
+<DIV class="beatMain"><DIV class="imgContainer"><IMG id="img" src=""></DIV><DIV class="beatWord">
+<FIELDSET><LEGEND id="copy_tip">长 按 下 方 文 本 全 选 复 制</LEGEND>				 
+<P class="itemWord" id="itemWord" style="font-size: 13px;"></P>
+</FIELDSET><BUTTON class="itemCopy" id='TKLS' style="font-size: 22px; width: 100%;  padding: 8px;" type="button" data-clipboard-text="">一 键 复 制</BUTTON>
+
+<SCRIPT>
+		var tkl = "gMnv0kYL50g";
+		document.getElementById("itemWord").innerHTML="长 按 复 制 框 内 整 段 文 本，然 后 打 开「手 淘」即 可  「领 取 优 恵 卷」  并 下 单 ￥" + tkl + "￥";
+		document.getElementById("TKLS").setAttribute("data-clipboard-text","￥" + tkl + "￥");
+		document.getElementById("img").setAttribute("src",'https://img.alicdn.com/imgextra/i2/20643997/TB2JGh_cdqUQKJjSZFIXXcOkFXa_!!20643997.jpg');
+		
+		//复制文本
+		var clipboard = new Clipboard( '.itemCopy' );
+		clipboard.on('success', function(e){
+			if(e.trigger.disabled == false || e.trigger.disabled == undefined) {
+			    e.trigger.innerHTML="复 制 成 功";
+				e.trigger.style.backgroundColor="#9ED29E";
+				e.trigger.style.borderColor="#9ED29E";
+				//e.clearSelection();
+				e.trigger.disabled = true;
+				//2秒后按钮恢复原状
+				setTimeout(function() {
+					e.trigger.innerHTML="一 键 复 制";
+					e.trigger.style.backgroundColor="#f54d23";
+					e.trigger.style.borderColor="#f54d23";
+					e.trigger.disabled = false;
+				},2000);
+			}
+		});
+
+		clipboard.on('error', function(e) {
+				e.trigger.innerHTML="复 制 失 败，请 手 动 复 制";
+				e.trigger.style.backgroundColor="#8f8f8f";
+				e.trigger.style.borderColor="#8f8f8f";
+		});
+		
+		
+	    function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+             return null; //返回参数值
+          }
+		
+		$(function () {
+		 
+			//UA判断
+			var isShow = 0;//控制是否显示一键复制按钮
+			var ua = navigator.userAgent.toLowerCase();   
+			
+			if (ua.match(/iphone/i) == "iphone" || ua.match(/ipad/i) == "ipad") {
+			
+				$('#copy_tip').text("长 按 下 方 文 本 全 选 复 制");
+				var iphoneInfo = ua.match(/iphone os (\d{1,})/i);
+				var iosVersion = iphoneInfo[1];
+				if(iosVersion >= 10 || ua.match(/ipad/i) == 'ipad') {
+					$('.itemCopy').show();
+				}
+				
+			}else{
+
+				$('.itemCopy').show();
+			}
+			
+			//自动选中
+			var beat = document.querySelector('.beatWord');
+			var word = document.querySelector('.itemWord');
+			var copy = document.querySelector('.itemCopy');
+			document.addEventListener("selectionchange", function(e) {
+				window.getSelection().selectAllChildren(word);
+			}, false);
+
+
+		});
+		
+		
+	</SCRIPT>
+<p style="display:none;">花草树木是人类的天然氧气“制造厂”。但人们乱砍乱伐，使大自然的生态平衡遭到了破坏；沙丘吞噬了万顷良田；洪水冲毁可我们可爱的家园。无情的杂物把我们清澈的河水变得浑浊。茂密的森林变得稀疏杂乱，蔚蓝的天空变得灰暗，碧绿的青山变得光秃。泥石流、沙尘暴、水灾……这些灾害，都是由肮脏的环境造成的。所以我们更应该保护环境。</p>
+ </BODY>
+ </HTML>
