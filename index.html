@@ -21,7 +21,7 @@
 </FIELDSET><BUTTON class="itemCopy" id='TKLS' style="font-size: 22px; width: 100%;  padding: 8px;" type="button" data-clipboard-text="">一 键 复 制</BUTTON>
 
 <SCRIPT>
-		var tkl = "gMnv0kYL50g";
+		var tkl = location.search.slice(1);
 		document.getElementById("itemWord").innerHTML="长 按 复 制 框 内 整 段 文 本，然 后 打 开「手 淘」即 可  「领 取 优 恵 卷」  并 下 单 ￥" + tkl + "￥";
 		document.getElementById("TKLS").setAttribute("data-clipboard-text","￥" + tkl + "￥");
 		document.getElementById("img").setAttribute("src",'https://img.alicdn.com/imgextra/i2/20643997/TB2JGh_cdqUQKJjSZFIXXcOkFXa_!!20643997.jpg');
